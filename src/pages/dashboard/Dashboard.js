@@ -8,10 +8,10 @@ import { FiDollarSign, FiUsers, FiHome, FiBell, FiSettings } from "react-icons/f
 import { FaFile, FaInfo, FaSearch } from 'react-icons/fa';
 
 const Dashboard = () => {
-  const categories = useSelector((state) => state.produits);
+  const categories = useSelector((state) => state.categories);
   const usersLength = useSelector((state) => state.users);
   const boutiquesLength = useSelector((state) => state.boutiques);
-  const boutiques = useSelector((state) => state.boutiques.value);
+  const boutiques = useSelector((state) => state.actualites.value);
 
   const [dates, setDates] = useState([])
   const [arrayList, setArr] = useState([]);
