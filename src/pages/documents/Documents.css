@@ -1,0 +1,19 @@
+.mainDiv {
+    width: 100%;
+    padding: 2rem 0 2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.mainDataDesc {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.mainDataDesc h1 {
+    font-size: 1.2rem !important;
+    font-weight: bold;
+    margin-bottom: 2rem !important;
+}

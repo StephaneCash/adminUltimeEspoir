@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+  font-family: 'Open Sans', sans-serif !important;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 14px !important;
+}
+
+label,
+textarea,
+input,
+select {
+  font-family: 'Open Sans', sans-serif !important;
+}
+
+body {
+  background-color: #efefef !important;
+}

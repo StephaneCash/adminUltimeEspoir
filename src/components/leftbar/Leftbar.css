@@ -1,0 +1,45 @@
+.leftbar {
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 15.5%;
+    overflow-y: auto;
+    z-index: 0;
+    padding: 6rem 2rem 2rem 2rem;
+    background-color: white;
+}
+
+.leftbar .menu-item .item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.3rem;
+}
+
+.leftbar .menu-item a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    text-overflow: ellipsis;
+}
+
+
+.leftbar .menu-item a .item span {
+    width: 150px;
+}
+
+.leftbar .menu-item .item svg {
+    color: #111;
+    font-size: 20px;
+}
+
+.leftbar .menu-item a.active .item span,
+.leftbar .menu-item a.active .item svg {
+    color: #df652d !important;
+}
+
+.leftbar .menu-item a:hover {
+    color: #111;
+}

@@ -1,0 +1,345 @@
+.mainApp {
+    height: 100vh;
+    width: 100%;
+}
+
+.mainApp .contentMain {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.mainApp .contentLeftBar {
+    width: 15.5%;
+    background-color: #fff;
+    height: 100vh;
+    position: relative;
+}
+
+.mainApp .contentApp {
+    width: 83.5%;
+    margin-top: 83px;
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+    padding-right: 1rem;
+}
+
+.contentApp .form-control,
+.contentApp textarea {
+    box-shadow: none !important;
+    font-size: 14px;
+    border-radius: 2px !important;
+}
+
+.contentApp .btn {
+    border-radius: 2px !important;
+}
+
+.contentApp .alertInputSearch {
+    height: 100px !important;
+    background-color: #fff !important;
+    border: 1px solid #fff !important;
+    display: flex;
+    align-items: center !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+.contentApp .alertInputSearch .input-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    width: 100% !important;
+}
+
+.contentApp .alertInputSearch .input-group input {
+    box-shadow: none !important;
+}
+
+.contentApp .col-sm-4 .btn-primary {
+    display: flex !important;
+    align-items: center !important;
+    gap: .5rem !important;
+    float: right !important;
+}
+
+.contentApp .tableCategorie {
+    background-color: #fff !important;
+    padding: 1rem;
+    min-height: 100px;
+    border-radius: 5px;
+}
+
+.contentApp a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.contentApp a:hover {
+    color: #fff;
+}
+
+.contentApp .retour {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    color: #df652d;
+    font-size: 15px;
+}
+
+.contentApp .imageCard {
+    height: 250px;
+}
+
+.contentApp .imageCard .card {
+    width: 100% !important;
+    height: 150px !important;
+    border-radius: 5px !important;
+}
+
+.contentApp .imageCard .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    border-radius: 5px !important;
+    border: 0 !important;
+}
+
+.contentApp .noneImage {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    height: 100% !important;
+    border: 1 dotted silver;
+    gap: 1rem;
+    border-radius: 5px !important;
+}
+
+.contentApp .btnList {
+    border: 1px solid silver;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+}
+
+.contentApp td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px !important;
+}
+
+.contentApp th {
+    font-weight: 700;
+}
+
+.swal-button--danger {
+    background-color: #df652d !important
+}
+
+.contentApp .alertListCat {
+    display: flex;
+}
+
+tr:hover {
+    background-color: #efefef !important;
+    cursor: pointer;
+}
+
+.contentApp form {
+    font-size: 12px !important;
+}
+
+.contentApp .headerListCategorie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.contentApp .tableCategorie .grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 15%);
+    margin-top: 1rem;
+    justify-content: space-around;
+    width: 100%;
+    gap: 1rem;
+}
+
+.contentApp .tableCategorie .grille .card {
+    width: 100%;
+    border-radius: 0;
+}
+
+.alert-secondary,
+.alert-primary {
+    border-radius: 5px !important;
+    border: 0 !important;
+    color: #000 !important;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    background-color: #ddd !important;
+}
+
+.alert-success {
+    border-radius: 5px !important;
+    border: 0 !important;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.contentApp h6,
+h5,
+h4,
+h2,
+h1,
+h3 {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.alert-secondary h5 {
+    font-size: 14px !important;
+}
+
+
+.contentApp .tableCategorie .grille .card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: all .3s;
+}
+
+.contentApp .tableCategorie .grille .card img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contentApp input,
+.contentApp textarea,
+.contentApp select {
+    border-radius: 5px !important;
+    border: 1px solid silver;
+}
+
+.UserCardsDetails {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+}
+
+.UserCardsDetails .card {
+    border-radius: 1px !important;
+    height: 250px;
+    text-align: center;
+}
+
+.UserCardsDetails .card .card-body {
+    height: 100%;
+    width: 100%;
+}
+
+.UserCardsDetails .card .card-body img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid silver;
+}
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: 1px solid #efefef;
+}
+
+.tableData {
+    padding: 1rem;
+    background-color: #fff;
+    min-height: 100px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    overflow: auto;
+}
+
+.alertMainAdress {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    width: 100% !important;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.alertMainAdress ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between !important;
+    margin: 0;
+    border: 1px solid #ddd;
+}
+
+.alertMainAdress ul li {
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    border-radius: 0;
+}
+
+.alertMainAdress .selected {
+    border-bottom: 2px solid #df652d;
+    background-color: #efefef;
+    color: #df652d;
+    border-radius: 0 !important;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.alertMainAdress a button {
+    border: 0;
+    border-radius: 2px !important;
+    background-color: #0b6cc7d0;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.rateAdd {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100%;
+}
+
+.rateAdd .card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 0;
+    border: 0;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+.modal {
+    display: flex !important;
+    align-items: center !important;
+    max-width: 100% !important;
+}
+
+.modal-dialog {
+    border-radius: 1px !important;
+}
+
+.modal-content {
+    border-radius: 1px !important;
+}
+
+.modal-header {
+    border-radius: 1px !important;
+}

@@ -1,0 +1,170 @@
+.categories {
+    display: flex !important;
+    margin-top: 70px !important;
+    font-size: 14px !important;
+}
+
+.categories .main {
+    margin-top: 20px !important;
+    padding-right: 2rem !important;
+}
+
+.categories .form-control,
+.categories textarea {
+    box-shadow: none !important;
+    font-size: 14px;
+}
+
+.categories .main .alertInputSearch {
+    width: 100% !important;
+    height: 100px !important;
+    background-color: #fff !important;
+    border: 1px solid #fff !important;
+    display: flex;
+    align-items: center !important;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.categories .main .alertInputSearch .input-group {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1rem !important;
+    width: 100% !important;
+}
+
+.categories .main .alertInputSearch .input-group input {
+    box-shadow: none !important;
+}
+
+.categories .main .col-sm-4 .btn-primary {
+    display: flex !important;
+    align-items: center !important;
+    gap: .5rem !important;
+    float: right !important;
+    background-color: #df652d !important;
+}
+
+.categories .tableCategorie {
+    background-color: #fff !important;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    min-height: 500px;
+}
+
+.categories a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.categories a:hover {
+    color: #fff;
+}
+
+.categories .retour {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    color: #df652d;
+    font-size: 15px;
+}
+
+.categories .imageCard {
+    height: 250px;
+}
+
+.categories .imageCard .card {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.categories .imageCard .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.categories .noneImage {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    height: 250px;
+    border: 2px dotted #df652d;
+    gap: 1rem;
+}
+
+.categories .btnList {
+    border: 1px solid silver;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
+.categories td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px !important;
+    color: #555 !important;
+}
+
+.categories th {
+    font-weight: 700;
+}
+
+.swal-button--danger {
+    background-color: #df652d !important
+}
+
+.categories .alertListCat {
+    display: flex;
+}
+
+tr:hover {
+    background-color: #efefef !important;
+    cursor: pointer;
+}
+
+.categories form {
+    font-size: 12px !important;
+}
+
+.categories .headerListCategorie {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.categories .tableCategorie .grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+    gap: 1rem;
+}
+
+.categories .tableCategorie .grille .card {
+    width: 250px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.categories .tableCategorie .grille .card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    transition: all .3s;
+}
+
+.categories .tableCategorie .grille .card img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.categories input,
+.categories textarea,
+.categories select {
+    border-radius: 3px !important;
+    border: 1px solid silver;
+}
+
