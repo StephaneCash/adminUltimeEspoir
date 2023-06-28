@@ -19,7 +19,7 @@ const store = configureStore({
   reducer: combineReducers({
     categories: categoriesSlice.reducer,
     users: userSlice.reducer,
-    sousCategories: sousCategoriesSlice.reducer,
+    images: sousCategoriesSlice.reducer,
     actualites: actualitesSlice.reducer,
     documentsAdmin: DocumentsSlice.reducer,
   })

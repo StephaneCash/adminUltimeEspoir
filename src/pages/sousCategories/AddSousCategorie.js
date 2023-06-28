@@ -14,13 +14,9 @@ const AddSousCategorie = () => {
     const [file, setFile] = useState('');
     const [image, setImage] = useState('');
     const [description, setDescription] = useState('');
-    const [categorieId, setCategorieId] = useState(null);
 
     const dispatch = useDispatch();
-    const isLoading = useSelector(state => state.sousCategories);
-
-    const categories = useSelector(state => state.categories.value);
-
+    const isLoading = useSelector(state => state.images);
 
     const location = useLocation();
     const { state } = location;
@@ -35,7 +31,6 @@ const AddSousCategorie = () => {
             setNom(state && state.data && state.data.nom);
             setImage(state && state.data && state.data.url);
             setDescription(state && state.data && state.data.description);
-            setCategorieId(state && state.data && state.data.categorieId);
         }
     }, [state]);
 
@@ -44,7 +39,6 @@ const AddSousCategorie = () => {
         formData.append('nom', nom);
         formData.append('image', image);
         formData.append('description', description);
-        formData.append('categorieId', categorieId);
 
         dispatch(newSousCategorie(formData));
     };
@@ -55,7 +49,6 @@ const AddSousCategorie = () => {
         formData.append('image', image);
         formData.append('description', description);
         formData.append('idCategorie', state && state.data && state.data.id);
-        formData.append('categorieId', categorieId);
 
         let data = {}
         data.form = formData;
@@ -63,9 +56,6 @@ const AddSousCategorie = () => {
 
         dispatch(updateSousCategorie(data));
     };
-
-    console.log(categories)
-
     return (
         <>
             <Navbar />
@@ -83,13 +73,13 @@ const AddSousCategorie = () => {
                                     gap: "5px",
                                     color: "#0b6cc7d0"
                                 }}>
-                                    <Link to="/sous-categories"
+                                    <Link to="/medias"
                                         style={{
                                             fontSize: "16px", color: "#0b6cc7d0",
                                             display: "flex", alignItems: "center", gap: "5px",
                                         }}
                                     >
-                                        <FaArrowLeft /> Sous catégories
+                                        <FaArrowLeft /> Médias
                                     </Link>
                                     <span style={{ fontSize: "15px", color: "#0b6cc7d0", }}>/</span>
                                     <span style={{ fontSize: "17px" }}>
@@ -130,14 +120,6 @@ const AddSousCategorie = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <select className='form-control mb-1' onChange={(e) => setCategorieId(e.target.value)}>
-                                        <option>--Choisir une catégorie--</option>
-                                        {
-                                            categories && categories.map(value => {
-                                                return <option key={value.id} value={value.id} selected={categorieId ? true : false}>{value.nom}</option>
-                                            })
-                                        }
-                                    </select>
                                     <div className="form-group mb-3">
                                         <label htmlFor="exampleFormControlTextarea1">Description</label>
                                         <textarea

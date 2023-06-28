@@ -8,7 +8,7 @@ import ListSousCategories from './ListSousCategories';
 
 const SousCategories = () => {
 
-    const sousCategoriesList = useSelector((state) => state.sousCategories);
+    const sousCategoriesList = useSelector((state) => state.images.value);
     const [valueSearch, setValueSearch] = useState('');
 
     return (

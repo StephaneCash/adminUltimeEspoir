@@ -7,7 +7,7 @@ export const getAllSousCategories = createAsyncThunk("sousCategories/getData", a
     rejectWithValue
 }) => {
     try {
-        const { data } = await axios.get(`${baseUrl}/sous-categories`);
+        const { data } = await axios.get(`${baseUrl}/images`);
         return data;
     } catch (error) {
         rejectWithValue(error.response);
@@ -18,12 +18,10 @@ export const newSousCategorie = createAsyncThunk("sousCategories/create",
 
     async (data, { rejectWithValue }) => {
         try {
-            //  let navigate = useNavigate();
-            const resp = await axios.post(`${baseUrl}/sous-categories`, data);
+            const resp = await axios.post(`${baseUrl}/images`, data);
             if (resp && resp.data) {
-                toast.success('Sous catégorie ajoutée avec succès');
+                toast.success('Image ajoutée avec succès');
             }
-            //navigate("/categories");
             return resp.data;
         } catch (error) {
             console.log(error.response);
@@ -35,10 +33,8 @@ export const newSousCategorie = createAsyncThunk("sousCategories/create",
 export const updateSousCategorie = createAsyncThunk("sousCategories/update",
     async (data) => {
         try {
-            //  let navigate = useNavigate();
-            const resp = await axios.put(`${baseUrl}/sous-categories/${data && data.id}`, data && data.form);
-            toast.success('Sous catégorie modifiée avec succès');
-            //navigate("/categories");
+            const resp = await axios.put(`${baseUrl}/images/${data && data.id}`, data && data.form);
+            toast.success('Image modifiée avec succès');
             return resp.data;
         } catch (error) {
             console.log(error.response);
@@ -49,10 +45,8 @@ export const updateSousCategorie = createAsyncThunk("sousCategories/update",
 export const deleteSousCategory = createAsyncThunk("sousCategories/delete",
     async (id) => {
         try {
-            //  let navigate = useNavigate();
-            await axios.delete(`${baseUrl}/sous-categories/${id}`);
-            toast.success('Sous catégorie supprimée avec succès');
-            //navigate("/categories");
+            await axios.delete(`${baseUrl}/images/${id}`);
+            toast.success('Image supprimée avec succès');
             return id;
         } catch (error) {
             console.log(error.response)
@@ -60,7 +54,7 @@ export const deleteSousCategory = createAsyncThunk("sousCategories/delete",
     })
 
 export const sousCategoriesSlice = createSlice({
-    name: "sousCategories",
+    name: "images",
     initialState: {
         value: [],
         isSuccess: false,

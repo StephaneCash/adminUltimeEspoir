@@ -7,7 +7,7 @@ export const getAllDocuments = createAsyncThunk("documentsAdmin/getData", async 
     rejectWithValue
 }) => {
     try {
-        const { data } = await axios.get(`${baseUrl}/documents-admin`);
+        const { data } = await axios.get(`${baseUrl}/documents`);
         return data
     } catch (error) {
         rejectWithValue(error.response);
@@ -17,7 +17,7 @@ export const getAllDocuments = createAsyncThunk("documentsAdmin/getData", async 
 export const newDocument = createAsyncThunk("documentsAdmin/create",
     async (data) => {
         try {
-            const resp = await axios.post(`${baseUrl}/documents-admin`, data);
+            const resp = await axios.post(`${baseUrl}/documents`, data);
             toast.success('Document ajouté avec succès');
             return resp.data;
         } catch (error) {
@@ -30,8 +30,8 @@ export const newDocument = createAsyncThunk("documentsAdmin/create",
 export const updateDocument = createAsyncThunk("documentsAdmin/update",
     async (data) => {
         try {
-            const resp = await axios.put(`${baseUrl}/documents-admin/${data && data.id}`, data && data.data);
-            toast.success('Document modifiéeavec succès');
+            const resp = await axios.put(`${baseUrl}/documents/${data && data.id}`, data && data.data);
+            toast.success('Document modifié avec succès');
             return resp.data;
         } catch (error) {
             console.log(error.response);
@@ -41,7 +41,7 @@ export const updateDocument = createAsyncThunk("documentsAdmin/update",
 export const deleteDocument = createAsyncThunk("documentsAdmin/delete",
     async (id) => {
         try {
-            await axios.delete(`${baseUrl}/documents-admin/${id}`);
+            await axios.delete(`${baseUrl}/documents/${id}`);
             toast.success('Document supprimé avec succès');
             return id;
         } catch (error) {
