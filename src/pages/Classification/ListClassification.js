@@ -75,7 +75,7 @@ export default function ListClassification(props) {
                 </div>
                 <div>
                     <label>Choisir le nombre d'items à afficher</label>
-                    <select onChange={(e) => setCunt(e.target.value)} className='form-control'>
+                    <select style={{width:"40px", textAlign:"center"}} onChange={(e) => setCunt(e.target.value)} className='form-control'>
                         <option value={5}>5</option>
                         <option value={10}>10</option>
                         <option value={15}>15</option>
@@ -115,7 +115,7 @@ export default function ListClassification(props) {
                                         key={row.id}
                                         sx={{ '&:last-child TableCell, &:last-child th': { border: 0 } }}
                                     >
-                                        <TableCell width={60}>
+                                        <TableCell width={30}>
                                             <input
                                                 className="form-check-input" type="checkbox"
                                                 value="" id="flexCheckDefault"
@@ -124,16 +124,20 @@ export default function ListClassification(props) {
                                             />
                                         </TableCell>
                                         <TableCell width={20}>{i + 1}</TableCell>
-                                        <TableCell width={220}>
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                                        <TableCell width={300}>
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '7px' }}>
                                                 <div>
                                                     <Avatar alt={row && row.nom} sx={{ width: 40, height: 40 }} src={baseUrlImage + "/" + row.url} />
                                                 </div>
                                                 <div>
-                                                    <div style={{ fontWeight: "600", }}>{row.nom}</div>
+                                                    <div style={{ fontWeight: "600", }}>
+                                                        {
+                                                            row && row.nom && row.nom.length > 50 ? row.nom.substring(0, 50) + "..." : row.nom
+                                                        }
+                                                    </div>
                                                 </div>
                                             </div>
-                                            
+
                                         </TableCell>
                                         <TableCell align="left" width={500} style={{ textAlign: "justify", fontWeight: "400", lineHeight: "1.4rem" }}>
                                             {

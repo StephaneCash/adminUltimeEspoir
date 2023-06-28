@@ -20,7 +20,7 @@ export const newClassification = createAsyncThunk("actualites/create",
         try {
             const resp = await axios.post(`${baseUrl}/actualites`, data);
             if (resp && resp.data) {
-                toast.success('Classification ajoutée avec succès');
+                toast.success('Actualité ajoutée avec succès');
             }
             return resp.data;
         } catch (error) {
@@ -34,7 +34,7 @@ export const updateClassification = createAsyncThunk("actualites/update",
     async (data) => {
         try {
             const resp = await axios.put(`${baseUrl}/actualites/${data && data.id}`, data && data.form);
-            toast.success('Classification modifiée avec succès');
+            toast.success('Actualité modifiée avec succès');
             return resp.data;
         } catch (error) {
             console.log(error.response);
@@ -46,7 +46,7 @@ export const deleteClassification = createAsyncThunk("actualites/delete",
     async (id) => {
         try {
             await axios.delete(`${baseUrl}/actualites/${id}`);
-            toast.success('Classification supprimée avec succès');
+            toast.success('Actualité supprimée avec succès');
             return id;
         } catch (error) {
             console.log(error.response)

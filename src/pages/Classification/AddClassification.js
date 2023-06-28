@@ -16,7 +16,7 @@ const AddClassification = () => {
     const [description, setDescription] = useState('');
 
     const dispatch = useDispatch();
-    const isLoading = useSelector(state => state.classifications);
+    const isLoading = useSelector(state => state.actualites);
 
     const location = useLocation();
     const { state } = location;

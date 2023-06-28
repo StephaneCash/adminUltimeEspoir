@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 import categoriesSlice from "./features/Categories"
 import { getAllcategories } from './features/Categories';
 import { getAllUsers } from './features/Users';
-import { combineReducers } from "redux";
+import { combineReducers } from "redux";  
 import userSlice from './features/Users';
 import sousCategoriesSlice, { getAllSousCategories } from './features/SousCategories';
 import actualitesSlice, { getAllactualites } from './features/Classifications';
