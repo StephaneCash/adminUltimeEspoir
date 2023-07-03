@@ -14,9 +14,12 @@ const AddClassification = () => {
     const [file, setFile] = useState('');
     const [image, setImage] = useState('');
     const [description, setDescription] = useState('');
+    const [categorieActuId, setCategorieId] = useState('');
 
     const dispatch = useDispatch();
     const isLoading = useSelector(state => state.actualites);
+
+    const categories = useSelector(state => state.categoriesActus.value)
 
     const location = useLocation();
     const { state } = location;
@@ -31,6 +34,7 @@ const AddClassification = () => {
             setNom(state && state.data && state.data.nom);
             setImage(state && state.data && state.data.url);
             setDescription(state && state.data && state.data.description);
+            setCategorieId(state && state.data && state.data.categorieId);
         }
     }, [state]);
 
@@ -39,6 +43,7 @@ const AddClassification = () => {
         formData.append('nom', nom);
         formData.append('image', image);
         formData.append('description', description);
+        formData.append('categorieActuId', categorieActuId);
 
         dispatch(newClassification(formData));
     };
@@ -48,6 +53,7 @@ const AddClassification = () => {
         formData.append('nom', nom);
         formData.append('image', image);
         formData.append('description', description);
+        formData.append('categorieActuId', categorieActuId);
 
         let data = {}
         data.form = formData;
@@ -118,6 +124,17 @@ const AddClassification = () => {
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div>
+                                        <select className='form-control' onChange={(e) => setCategorieId(e.target.value)}>
+                                            <option>--Choisir une catégorie--</option>
+                                            {
+                                                categories && categories.length && categories.map(val => {
+                                                    return <option value={val.id} key={val.id}>{val.nom}</option>
+                                                })
+                                            }
+                                        </select>
+                                    </div>
                                     <div className="form-group mb-3">
                                         <label htmlFor="exampleFormControlTextarea1">Description</label>
                                         <textarea
@@ -129,9 +146,9 @@ const AddClassification = () => {
                                     </div>
 
                                 </div>
-                                <div  className={file ? "col-sm-6 imageCard" : image ? "col-sm-6 imageCard" : "col-sm-6"}>
+                                <div className={file ? "col-sm-6 imageCard" : image ? "col-sm-6 imageCard" : "col-sm-6"}>
                                     <h5>Image</h5>
-                                    <div  className='card mt-2' style={{ border: image ? "1px solid #ddd" : "1px solid #ddd" }}>
+                                    <div className='card mt-2' style={{ border: image ? "1px solid #ddd" : "1px solid #ddd" }}>
                                         {
                                             file ?
                                                 <img src={file} alt="" className='img-thumbnail' /> :

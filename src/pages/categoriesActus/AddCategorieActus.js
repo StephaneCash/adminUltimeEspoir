@@ -2,19 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { FaArrowLeft } from 'react-icons/fa';
 import Leftbar from '../../components/leftbar/Leftbar';
 import Navbar from '../../components/navbar/Navbar';
-import "./Categorie.css";
 import { Link, useLocation } from 'react-router-dom';
-import { newCategorie, updateCategorie } from "../../features/Categories";
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../../components/loader/Loader';
+import { newCategorieActus, updateCategorieActus } from '../../features/CategoriesActus';
 
-const AddCategorie = () => {
+const AddCategorieActus = () => {
 
     const [nom, setNom] = useState('');
     const [description, setDescription] = useState('');
 
     const dispatch = useDispatch();
-    const isLoading = useSelector(state => state.categories);
+    const isLoading = useSelector(state => state.categoriesActus);
 
     const location = useLocation();
     const { state } = location;
@@ -31,7 +30,7 @@ const AddCategorie = () => {
         formData.nom = nom;
         formData.description = description
 
-        dispatch(newCategorie(formData));
+        dispatch(newCategorieActus(formData));
     };
 
     const updCategorie = (e) => {
@@ -44,7 +43,7 @@ const AddCategorie = () => {
         data.form = formData;
         data.id = state && state.data && state.data.id;
 
-        dispatch(updateCategorie(data));
+        dispatch(updateCategorieActus(data));
     };
 
     return (
@@ -64,13 +63,13 @@ const AddCategorie = () => {
                                     gap: "5px",
                                     color: "#0b6cc7d0"
                                 }}>
-                                    <Link to="/categories"
+                                    <Link to="/categoriesActus"
                                         style={{
                                             fontSize: "16px", color: "#0b6cc7d0",
                                             display: "flex", alignItems: "center", gap: "5px",
                                         }}
                                     >
-                                        <FaArrowLeft /> Catégories
+                                        <FaArrowLeft /> Catégories Actus
                                     </Link>
                                     <span style={{ fontSize: "15px", color: "#0b6cc7d0", }}>/</span>
                                     <span style={{ fontSize: "17px" }}>
@@ -130,4 +129,4 @@ const AddCategorie = () => {
     )
 }
 
-export default AddCategorie
+export default AddCategorieActus

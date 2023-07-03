@@ -18,6 +18,9 @@ import DetailClassification from '../pages/Classification/DetailClassification';
 import Documents from '../pages/documents/Documents';
 import AddDocument from '../pages/documents/AddDocument';
 import DetailDoc from '../pages/documents/DetailDoc';
+import Config from '../pages/config/Config';
+import CategorieActus from '../pages/categoriesActus/CategorieActus';
+import AddCategorieActus from '../pages/categoriesActus/AddCategorieActus';
 
 const RoutesFree = () => {
     return (
@@ -42,6 +45,9 @@ const RoutesFree = () => {
                     <Route path='/documents' element={<Documents />} />
                     <Route path='/documents/add' element={<AddDocument />} />
                     <Route path='/documents/detail' element={<DetailDoc />} />
+                    <Route path='/config' element={<Config />} />
+                    <Route path='/categoriesActus' element={<CategorieActus />} />
+                    <Route path='/categoriesActus/add' element={<AddCategorieActus />} />
                 </Route>
             </Routes>
         </BrowserRouter>

@@ -135,6 +135,7 @@ export default function ListClassification(props) {
                                                             row && row.nom && row.nom.length > 50 ? row.nom.substring(0, 50) + "..." : row.nom
                                                         }
                                                     </div>
+                                                    <div style={{fontSize:"12px", color:"#df652d"}}>{row && row.categorie && row.categorie.nom && row.categorie.nom}</div>
                                                 </div>
                                             </div>
 

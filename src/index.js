@@ -14,6 +14,8 @@ import userSlice from './features/Users';
 import sousCategoriesSlice, { getAllSousCategories } from './features/SousCategories';
 import actualitesSlice, { getAllactualites } from './features/Classifications';
 import DocumentsSlice, { getAllDocuments } from './features/Documents';
+import textsSlice, { getAllTexts } from './features/Text';
+import categorieActusSlice, { getAllcategoriesActus } from './features/CategoriesActus';
 
 const store = configureStore({
   reducer: combineReducers({
@@ -22,6 +24,8 @@ const store = configureStore({
     images: sousCategoriesSlice.reducer,
     actualites: actualitesSlice.reducer,
     documentsAdmin: DocumentsSlice.reducer,
+    texts: textsSlice.reducer,
+    categoriesActus: categorieActusSlice.reducer
   })
 });
 
@@ -30,6 +34,8 @@ store.dispatch(getAllUsers());
 store.dispatch(getAllSousCategories());
 store.dispatch(getAllactualites());
 store.dispatch(getAllDocuments());
+store.dispatch(getAllTexts());
+store.dispatch(getAllcategoriesActus());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

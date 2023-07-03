@@ -3,22 +3,22 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { baseUrl } from "../bases/basesUrl";
 
-export const getAllPays = createAsyncThunk("pays/getData", async (arg, {
+export const getAllTexts = createAsyncThunk("texts/getData", async (arg, {
     rejectWithValue
 }) => {
     try {
-        const { data } = await axios.get(`${baseUrl}/pays`);
+        const { data } = await axios.get(`${baseUrl}/texts`);
         return data
     } catch (error) {
         rejectWithValue(error.response);
     }
 });
 
-export const newPays = createAsyncThunk("pays/create",
+export const newText = createAsyncThunk("texts/create",
     async (data) => {
         try {
-            const resp = await axios.post(`${baseUrl}/pays`, data);
-            toast.success('Pays ajouté avec succès');
+            const resp = await axios.post(`${baseUrl}/texts`, data);
+            toast.success('texts ajouté avec succès');
             return resp.data;
         } catch (error) {
             if (error.response && error.response.status === 400) {
@@ -27,83 +27,83 @@ export const newPays = createAsyncThunk("pays/create",
         }
     });
 
-export const updatePays = createAsyncThunk("pays/update",
+export const updateText = createAsyncThunk("texts/update",
     async (data) => {
         try {
-            const resp = await axios.put(`${baseUrl}/pays/${data && data.id}`, data && data.data);
-            toast.success('Pays modifié avec succès');
+            const resp = await axios.put(`${baseUrl}/texts/${data && data.id}`, data && data.data);
+            toast.success('texts modifié avec succès');
             return resp.data;
         } catch (error) {
             console.log(error.response);
         }
     });
 
-export const deletePays = createAsyncThunk("pays/delete",
+export const deleteText = createAsyncThunk("texts/delete",
     async (id) => {
         try {
-            await axios.delete(`${baseUrl}/Pays/${id}`);
-            toast.success('Pays supprimé avec succès');
+            await axios.delete(`${baseUrl}/texts/${id}`);
+            toast.success('texts supprimé avec succès');
             return id;
         } catch (error) {
             console.log(error.response)
         }
     })
 
-export const paysSlice = createSlice({
-    name: "pays",
+export const textsSlice = createSlice({
+    name: "texts",
     initialState: {
         value: [],
         isSuccess: false,
         loading: false
     },
     extraReducers: {
-        //GET ALL Pays
-        [getAllPays.pending]: (state, { payload }) => {
+        //GET ALL texts
+        [getAllTexts.pending]: (state, { payload }) => {
             state.loading = true;
             state.isSuccess = false;
         },
-        [getAllPays.fulfilled]: (state, action) => {
+        [getAllTexts.fulfilled]: (state, action) => {
             state.loading = false;
             state.value = action.payload;
             state.isSuccess = true;
         },
-        [getAllPays.rejected]: (state, { payload }) => {
+        [getAllTexts.rejected]: (state, { payload }) => {
             state.loading = false;
             state.isSuccess = false;
         },
         //CREATE boutique
-        [newPays.pending]: (state, action) => {
+        [newText.pending]: (state, action) => {
             state.loading = true;
         },
-        [newPays.fulfilled]: (state, action) => {
+        [newText.fulfilled]: (state, action) => {
             state.loading = false;
             state.value.push(action.payload)
             state.isSuccess = true;
         },
-        [newPays.rejected]: (state, action) => {
+        [newText.rejected]: (state, action) => {
             state.loading = false;
             state.isSuccess = false;
         },
         // DELETE boutique
-        [deletePays.pending]: (state, action) => {
+        [deleteText.pending]: (state, action) => {
             state.loading = true;
         },
-        [deletePays.fulfilled]: (state, action) => {
+        [deleteText.fulfilled]: (state, action) => {
             state.loading = false;
             state.value = state.value.filter(val => {
                 return val.id !== action.payload
             })
             state.isSuccess = true;
         },
-        [deletePays.rejected]: (state, action) => {
+        [deleteText.rejected]: (state, action) => {
             state.loading = false;
             state.isSuccess = false;
         },
         // UPDATE boutique
-        [updatePays.pending]: (state, action) => {
+        [updateText.pending]: (state, action) => {
             state.loading = true;
         },
-        [updatePays.fulfilled]: (state, action) => {
+        [updateText.fulfilled]: (state, action) => {
             state.loading = false;
             state.isSuccess = true;
             state.value = state.value.filter(val => {
@@ -111,11 +111,11 @@ export const paysSlice = createSlice({
             })
             state.value.push(action.payload);
         },
-        [updatePays.rejected]: (state, action) => {
+        [updateText.rejected]: (state, action) => {
             state.loading = false;
             state.isSuccess = false;
         },
     }
 });
 
-export default paysSlice;
+export default textsSlice;

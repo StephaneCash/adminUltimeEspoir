@@ -1,0 +1,15 @@
+.configAccueil {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.configAccueil h5 {
+    font-size: 1.4rem !important;
+}
+
+.configAccueil .btnsAccueil {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

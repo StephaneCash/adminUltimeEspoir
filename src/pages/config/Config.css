@@ -1,0 +1,36 @@
+.toolbar {
+    background-color: #fff;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toolbar ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    background-color: #ddd;
+}
+
+.toolbar ul li {
+    background-color: #ddd;
+    padding: 1rem;
+    cursor: pointer;
+    font-family: "Poppins";
+}
+
+.toolbar ul li.selected {
+    border-bottom: 2px solid #df652d;
+}
+
+.dataMain {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+}

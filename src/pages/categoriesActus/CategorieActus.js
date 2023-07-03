@@ -4,13 +4,11 @@ import { Link } from 'react-router-dom';
 import Leftbar from '../../components/leftbar/Leftbar';
 import Navbar from '../../components/navbar/Navbar';
 import { useSelector } from 'react-redux';
-import ListDocuments from './ListDocuments';
-import "./Documents.css"
+import ListCategoriesActus from './ListCategoriesActus';
 
-const Documents = () => {
+const CategorieActus = () => {
 
-    const documents = useSelector((state) => state.documentsAdmin.value);
-
+    const categoriesList = useSelector((state) => state.categoriesActus);
     const [valueSearch, setValueSearch] = useState('');
 
     return (
@@ -46,8 +44,8 @@ const Documents = () => {
                         </div>
 
                         <div className='col-sm-12 tableData'>
-                            <ListDocuments
-                                data={documents}
+                            <ListCategoriesActus
+                                data={categoriesList}
                                 valueSearch={valueSearch}
                             />
                         </div>
@@ -58,4 +56,4 @@ const Documents = () => {
     )
 }
 
-export default Documents
+export default CategorieActus

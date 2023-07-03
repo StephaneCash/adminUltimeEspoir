@@ -53,7 +53,8 @@ export default function ListDocuments(props) {
             <div className='headTable' style={{
                 background: '#ddd', color: "#000",
                 border: "1px solid #ddd", padding: "1rem", display: "flex",
-                justifyContent: "space-between", alignItems: "center", borderRadius: "5px"
+                justifyContent: "space-between", alignItems: "center", borderRadius: "5px",
+        
             }}>
                 <div>
                     <span>Pages</span> / <span>Documents {data && data.length > 0 ? `(${data.length})` :
@@ -74,7 +75,7 @@ export default function ListDocuments(props) {
                     </select>
                 </div>
             </div>
-            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <Table sx={{ minWidth: 650, }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
                         <TableCell>
@@ -120,7 +121,7 @@ export default function ListDocuments(props) {
                                         dateParserFunction(row.createdAt)
                                     }
                                 </TableCell>
-                                <TableCell align="left" width={190}>
+                                <TableCell align="left" width={50}>
                                     <Link to={{ pathname: "detail" }} state={{ data: row, val: 1 }} style={{ color: "#111" }} className="me-1">
                                         <FaInfo size={18} />
                                     </Link>

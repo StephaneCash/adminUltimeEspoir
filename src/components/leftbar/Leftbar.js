@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import "./Leftbar.css";
-import {  FaGraduationCap, FaHospital, FaInfo, FaRegListAlt, FaTasks } from "react-icons/fa"
-import { FiBarChart, FiImage } from 'react-icons/fi';
+import {  FaCogs, FaGraduationCap, FaHospital, FaInfo, FaRegListAlt, FaTasks } from "react-icons/fa"
+import { FiBarChart, FiImage, FiMenu } from 'react-icons/fi';
 import { GoTextSize } from "react-icons/go"
 import { GrUserAdmin } from "react-icons/gr";
 
@@ -20,7 +20,14 @@ const Leftbar = () => {
                 <NavLink to="/categories">
                     <div className='item'>
                         <FaRegListAlt />
-                        <span>Catégorie</span>
+                        <span>Catégorie Navbar</span>
+                    </div>
+                </NavLink>
+
+                <NavLink to="/categoriesActus">
+                    <div className='item'>
+                        <FiMenu />
+                        <span>Catégorie actualités</span>
                     </div>
                 </NavLink>
 
@@ -31,21 +38,21 @@ const Leftbar = () => {
                     </div>
                 </NavLink>
 
-                <NavLink to="/medias">
+                <NavLink to="/ecole">
                     <div className='item'>
                         <FaGraduationCap />
                         <span>Ecole</span>
                     </div>
                 </NavLink>
 
-                <NavLink to="/medias">
+                <NavLink to="/hopital">
                     <div className='item'>
                         <FaHospital />
                         <span>Hôpital</span>
                     </div>
                 </NavLink>
 
-                <NavLink to="/medias">
+                <NavLink to="/magazine">
                     <div className='item'>
                         <FaInfo />
                         <span>Magazine</span>
@@ -69,6 +76,12 @@ const Leftbar = () => {
                     <div className='item'>
                         <GrUserAdmin />
                         <span>Utilisateurs</span>
+                    </div>
+                </NavLink>
+                <NavLink to="/config">
+                    <div className='item'>
+                        <FaCogs />
+                        <span>Configuration</span>
                     </div>
                 </NavLink>
             </div>
