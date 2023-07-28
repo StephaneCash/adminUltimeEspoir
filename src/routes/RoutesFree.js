@@ -21,6 +21,14 @@ import DetailDoc from '../pages/documents/DetailDoc';
 import Config from '../pages/config/Config';
 import CategorieActus from '../pages/categoriesActus/CategorieActus';
 import AddCategorieActus from '../pages/categoriesActus/AddCategorieActus';
+import CategorieMagazine from '../pages/categoriesMagazines/CategorieMagazine';
+import AddCategorieMagazine from '../pages/categoriesMagazines/AddCategiorie';
+import Magazines from '../pages/magazines/Magazines';
+import AddMagazine from '../pages/magazines/AddMagazine';
+import Detail from '../pages/magazines/Detail';
+import Publications from '../pages/publications/Publications';
+import AddPub from '../pages/publications/AddPub';
+import DetailPub from '../pages/publications/DetailPub';
 
 const RoutesFree = () => {
     return (
@@ -48,6 +56,17 @@ const RoutesFree = () => {
                     <Route path='/config' element={<Config />} />
                     <Route path='/categoriesActus' element={<CategorieActus />} />
                     <Route path='/categoriesActus/add' element={<AddCategorieActus />} />
+                    <Route path='/categories-magazines' element={<CategorieMagazine />} />
+                    <Route path='/categories-magazines/add' element={<AddCategorieMagazine />} />
+
+                    <Route path='/magazines' element={<Magazines />} />
+                    <Route path='/magazines/add' element={<AddMagazine />} />
+                    <Route path='/magazines/detail' element={<Detail />} />
+
+                    <Route path='/publications' element={<Publications />} />
+                    <Route path='/publications/add' element={<AddPub />} />
+                    <Route path='/publications/detail' element={<DetailPub />} />
+
                 </Route>
             </Routes>
         </BrowserRouter>

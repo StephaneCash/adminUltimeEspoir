@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import "./Leftbar.css";
-import {  FaCogs, FaGraduationCap, FaHospital, FaInfo, FaRegListAlt, FaTasks } from "react-icons/fa"
+import {  FaCogs, FaGraduationCap, FaHospital, FaInfo, FaList, FaRegListAlt, FaTasks } from "react-icons/fa"
 import { FiBarChart, FiImage, FiMenu } from 'react-icons/fi';
-import { GoTextSize } from "react-icons/go"
+import { GoComment, GoTextSize } from "react-icons/go"
 import { GrUserAdmin } from "react-icons/gr";
 
 const Leftbar = () => {
@@ -31,6 +31,13 @@ const Leftbar = () => {
                     </div>
                 </NavLink>
 
+                <NavLink to="/categories-magazines">
+                    <div className='item'>
+                        <FaList />
+                        <span>Catégorie magazine</span>
+                    </div>
+                </NavLink>
+
                 <NavLink to="/actualites">
                     <div className='item'>
                         <FaTasks />
@@ -52,10 +59,18 @@ const Leftbar = () => {
                     </div>
                 </NavLink>
 
-                <NavLink to="/magazine">
+                <NavLink to="/magazines">
                     <div className='item'>
                         <FaInfo />
-                        <span>Magazine</span>
+                        <span>Magazines</span>
+                    </div>
+                </NavLink>
+
+                
+                <NavLink to="/publications">
+                    <div className='item'>
+                        <GoComment />
+                        <span>Publications</span>
                     </div>
                 </NavLink>
 

@@ -9,13 +9,16 @@ import { Provider } from 'react-redux';
 import categoriesSlice from "./features/Categories"
 import { getAllcategories } from './features/Categories';
 import { getAllUsers } from './features/Users';
-import { combineReducers } from "redux";  
+import { combineReducers } from "redux";
 import userSlice from './features/Users';
 import sousCategoriesSlice, { getAllSousCategories } from './features/SousCategories';
 import actualitesSlice, { getAllactualites } from './features/Classifications';
 import DocumentsSlice, { getAllDocuments } from './features/Documents';
 import textsSlice, { getAllTexts } from './features/Text';
 import categorieActusSlice, { getAllcategoriesActus } from './features/CategoriesActus';
+import categorieMagazineSlice, { getAllcategoriesMagazine } from './features/CategoriesMagazine';
+import magazineSlice, { getAllMagazines } from './features/Magazines';
+import publicationSlice, { getAllPubs } from './features/Publications';
 
 const store = configureStore({
   reducer: combineReducers({
@@ -25,7 +28,10 @@ const store = configureStore({
     actualites: actualitesSlice.reducer,
     documentsAdmin: DocumentsSlice.reducer,
     texts: textsSlice.reducer,
-    categoriesActus: categorieActusSlice.reducer
+    categoriesActus: categorieActusSlice.reducer,
+    categoriesMagazines: categorieMagazineSlice.reducer,
+    magazines: magazineSlice.reducer,
+    publications: publicationSlice.reducer
   })
 });
 
@@ -36,6 +42,9 @@ store.dispatch(getAllactualites());
 store.dispatch(getAllDocuments());
 store.dispatch(getAllTexts());
 store.dispatch(getAllcategoriesActus());
+store.dispatch(getAllcategoriesMagazine());
+store.dispatch(getAllMagazines());
+store.dispatch(getAllPubs());
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
